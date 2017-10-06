@@ -1,3 +1,3 @@
 # Project-vejret
-In this folder, I have uploaded my files to make the Weater Project on my website.
-<br />See the full project on <a href="http://vejret.akselhg.dk">http://vejret.akselhg.dk</a>
+In this folder, I have uploaded the files, I have used to transfer the Weater data from an Arduino and to recieve on an Apache server.
+<br />See the full project on: http://projects.akselhg.dk/fritid/arduino/vejret/
