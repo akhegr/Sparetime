@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AlarmSMS</string>
+    <string name="action_settings">Indstilinger</string>
+    <string name="hello_world">Hej verden!</string>
+    <string name="mobile">+4561289111</string>
+
+</resources>

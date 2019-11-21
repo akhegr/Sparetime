@@ -1,0 +1,97 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ca8ca0f616b1999d8f32a50ad85aba7b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\53c9a1f9d2b8299d6b5d4313c8140bc5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3b6e2649dadb1fffb21098935ab3b3e4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\094408e63b42dd41528544fbd4f0934b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\82a9dbb66bee9b2ac729ab8b55e5b80b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\cc7fa038925078fea7cc01d40bc9c23f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ae02c41e23de1fbda3ddb35f9a1e02ce\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc373ba33ec282d3991b2873249a6f20\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e862ca2c88ada4ebd0459bafd8a89c9f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b390834ac277c374b695345ec582b2fd\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:1-28:12
+	package
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:3:5-33
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ca8ca0f616b1999d8f32a50ad85aba7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\ca8ca0f616b1999d8f32a50ad85aba7b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\53c9a1f9d2b8299d6b5d4313c8140bc5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\53c9a1f9d2b8299d6b5d4313c8140bc5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3b6e2649dadb1fffb21098935ab3b3e4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\3b6e2649dadb1fffb21098935ab3b3e4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\094408e63b42dd41528544fbd4f0934b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\094408e63b42dd41528544fbd4f0934b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\82a9dbb66bee9b2ac729ab8b55e5b80b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\82a9dbb66bee9b2ac729ab8b55e5b80b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\cc7fa038925078fea7cc01d40bc9c23f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\cc7fa038925078fea7cc01d40bc9c23f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ae02c41e23de1fbda3ddb35f9a1e02ce\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\ae02c41e23de1fbda3ddb35f9a1e02ce\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc373ba33ec282d3991b2873249a6f20\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\cc373ba33ec282d3991b2873249a6f20\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e862ca2c88ada4ebd0459bafd8a89c9f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\e862ca2c88ada4ebd0459bafd8a89c9f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b390834ac277c374b695345ec582b2fd\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\akheg\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\b390834ac277c374b695345ec582b2fd\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+	android:targetSdkVersion
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:8:9-38
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:7:5-8:41
+		INJECTED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.SEND_SMS
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:10:22-64
+application
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:12:5-26:19
+	android:label
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:15:9-41
+	android:icon
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:14:9-45
+	android:allowBackup
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:16:9-40
+activity#dk.akhegr.alarmsms.MainActivity
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:17:9-25:20
+	android:label
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:19:13-45
+	android:name
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:18:13-59
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from C:\Users\akheg\OneDrive - University College Nordjylland\StudioProjects\Egne\dk.akhegr.AlarmSMS\dk.akhegr.AlarmSMS\app\src\main\AndroidManifest.xml:23:27-74

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translatable="false">AlarmSMS</string>
+    <string name="menu_exit">Close the app</string>
+
+    <string name="exit_title">Would you close the app?</string>
+    <string name="exit_yes">Yes</string>
+    <string name="exit_no">No</string>
+
+    <string name="mobile" translatable="false"></string>
+    <string name="text_enterMobile" translatable="true">Alarm phone no.</string>
+    <string name="text_enterPassword" translatable="true">Enter the password</string>
+
+    <string name="text_mobile" translatable="true">Alarm no.:</string>
+    <string name="text_password" translatable="true">Password:</string>
+
+    <string name="text_connect" translatable="true">Activate alarm</string>
+    <string name="text_disconnect" translatable="true">Disarm</string>
+
+    <string name="sms_connect" translatable="false">121</string>
+    <string name="sms_disconnect" translatable="false">120</string>
+    <string name="sms_status" translatable="false">200</string>
+
+    <string name="text_byLine" translatable="true">Made by Aksel H. Gregersen</string>
+
+</resources>

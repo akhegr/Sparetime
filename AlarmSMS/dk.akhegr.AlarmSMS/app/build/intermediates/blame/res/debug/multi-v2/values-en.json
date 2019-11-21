@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "from": {
+                        "startLines": "4,6,3,2,5,12,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "173,281,131,57,213,632,346,398,460,527,579",
+                        "endColumns": "38,63,40,72,66,55,50,60,65,50,51",
+                        "endOffsets": "207,340,167,125,275,683,392,454,521,573,626"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,94,158,199,272,339,395,446,507,573,624",
+                        "endColumns": "38,63,40,72,66,55,50,60,65,50,51",
+                        "endOffsets": "89,153,194,267,334,390,441,502,568,619,671"
+                    }
+                }
+            ]
+        }
+    ]
+}

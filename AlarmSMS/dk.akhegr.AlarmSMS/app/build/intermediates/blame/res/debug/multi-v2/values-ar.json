@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ar\\values-ar.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\akheg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\cc7fa038925078fea7cc01d40bc9c23f\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

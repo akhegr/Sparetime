@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AlarmSMS</string>
+    <string name="action_settings">Indstilinger</string>
+    <!--<string name="hello_world">Hej verden!</string>-->
+    <string name="mobile">61289111</string>
+
+    <string name="alarm_prompt">Besked til alarmen:</string>
+    <string name="text_enterMobile">Indtast modtagerens mobilnummer</string>
+    <string name="text_mobile">Mobilnummer:</string>
+    <string name="text_connect">Tilkobling</string>
+    <string name="text_disconnect">Frakobling</string>
+
+    <string name="text_byLine">Lavet af Aksel H. Gregersen</string>
+
+    <!--<string name="text_mobile"></string>-->
+
+    <string-array name="alarm_array">
+        <item>Slå til</item>
+        <item>Slå fra</item>
+    </string-array>
+
+    <string-array name="alarm_value">
+        <item>connect</item>
+        <item>disconnect</item>
+    </string-array>
+
+</resources>

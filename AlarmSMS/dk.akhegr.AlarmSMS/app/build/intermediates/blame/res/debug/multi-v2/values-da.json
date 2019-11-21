@@ -1,0 +1,41 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-da\\values-da.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\src\\main\\res\\values-da\\strings.xml",
+                    "from": {
+                        "startLines": "5,3,4,2,6,12,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "270,127,208,57,332,691,401,457,518,584,639",
+                        "endColumns": "60,79,60,68,67,51,54,59,64,53,50",
+                        "endOffsets": "326,202,264,121,395,738,451,512,578,633,685"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,116,196,257,427,495,547,602,662,727,781",
+                        "endColumns": "60,79,60,68,67,51,54,59,64,53,50",
+                        "endOffsets": "111,191,252,321,490,542,597,657,722,776,827"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\cc7fa038925078fea7cc01d40bc9c23f\\res\\values-da\\values-da.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "326",
+                        "endColumns": "100",
+                        "endOffsets": "422"
+                    }
+                }
+            ]
+        }
+    ]
+}

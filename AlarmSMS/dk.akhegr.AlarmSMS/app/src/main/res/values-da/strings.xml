@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_exit" translatable="false">Luk appen</string>
+    <string name="exit_title" translatable="false">Vil du lukke appen?</string>
+    <string name="exit_yes" translatable="false">Ja</string>
+    <string name="exit_no" translatable="false">Nej</string>
+    <string name="text_byLine">Lavet af Aksel H. Gregersen</string>
+    <string name="text_disconnect">Frakobling</string>
+    <string name="text_enterMobile">Alarm tlf. nr.</string>
+    <string name="text_enterPassword">Indtast kodeordet</string>
+    <string name="text_mobile">Alarm-nummer:</string>
+    <string name="text_password">Kodeord:</string>
+    <string name="text_connect">Tilkobling</string>
+</resources>

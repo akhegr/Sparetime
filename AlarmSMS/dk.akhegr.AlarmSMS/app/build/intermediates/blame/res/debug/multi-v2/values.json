@@ -1,0 +1,104 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "-1,8,6,7,4,10,-1,-1,-1,24,17,18,11,12,14,15",
+                        "startColumns": "-1,4,4,4,4,4,-1,-1,-1,4,4,4,4,4,4,4",
+                        "startOffsets": "-1,281,176,240,123,321,-1,-1,-1,1036,690,766,378,459,546,617",
+                        "endColumns": "-1,38,63,40,51,56,-1,-1,-1,86,75,70,80,85,70,71",
+                        "endOffsets": "-1,315,235,276,170,373,-1,-1,-1,1118,761,832,454,540,612,684"
+                    },
+                    "to": {
+                        "startLines": "118,119,120,121,122,123,124,125,126,128,129,130,131,132,133,134",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5845,5912,5951,6015,6056,6108,6157,6222,6290,6425,6512,6588,6659,6740,6826,6897",
+                        "endColumns": "66,38,63,40,51,48,64,67,63,86,75,70,80,85,70,71",
+                        "endOffsets": "5907,5946,6010,6051,6103,6152,6217,6285,6349,6507,6583,6654,6735,6821,6892,6964"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "86,87",
+                        "startColumns": "4,4",
+                        "startOffsets": "3910,3968",
+                        "endColumns": "57,55",
+                        "endOffsets": "3963,4019"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "135,138",
+                        "startColumns": "4,4",
+                        "startOffsets": "6969,7052",
+                        "endLines": "137,140",
+                        "endColumns": "12,12",
+                        "endOffsets": "7047,7119"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\.gradle\\caches\\transforms-1\\files-1.1\\support-core-ui-27.1.1.aar\\094408e63b42dd41528544fbd4f0934b\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1",
+                        "startColumns": "-1,-1",
+                        "startOffsets": "-1,-1"
+                    },
+                    "to": {
+                        "startLines": "2,159",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,8403",
+                        "endLines": "2,161",
+                        "endColumns": "60,12",
+                        "endOffsets": "111,8543"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\cc7fa038925078fea7cc01d40bc9c23f\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "3,4,7,9,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,117,127,141,142,147,150,155,157,158",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "116,185,408,539,4024,4094,4162,4234,4304,4365,4426,4487,4549,4613,4675,4736,4804,4904,4964,5030,5103,5172,5229,5281,5343,5415,5491,5526,5561,5611,5645,5680,5775,6354,7124,7241,7508,7801,8068,8264,8336",
+                        "endLines": "3,4,7,9,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,117,127,141,145,147,153,155,157,158",
+                        "endColumns": "68,62,57,73,69,67,71,69,60,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,34,34,49,33,34,34,69,70,116,12,109,12,128,71,66",
+                        "endOffsets": "180,243,461,608,4089,4157,4229,4299,4360,4421,4482,4544,4608,4670,4731,4799,4899,4959,5025,5098,5167,5224,5276,5338,5410,5486,5521,5556,5606,5640,5675,5710,5840,6420,7236,7437,7613,7997,8192,8331,8398"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\akheg\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\53c9a1f9d2b8299d6b5d4313c8140bc5\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "5,6,8,116,146,148,149,154,156",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "248,337,466,5715,7442,7618,7740,8002,8197",
+                        "endColumns": "88,70,72,59,65,121,60,65,66",
+                        "endOffsets": "332,403,534,5770,7503,7735,7796,8063,8259"
+                    }
+                }
+            ]
+        }
+    ]
+}

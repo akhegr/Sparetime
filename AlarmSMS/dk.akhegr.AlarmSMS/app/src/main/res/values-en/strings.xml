@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_exit" translatable="false">Close the app</string>
+    <string name="exit_yes">Yes</string>
+    <string name="exit_no">No</string>
+    <string name="text_byLine">Made by Aksel H. Gregersen</string>
+    <string name="exit_title">Would you close the app?</string>
+    <string name="text_disconnect">Disarm</string>
+    <string name="text_enterMobile">Alarm phone no.</string>
+    <string name="text_enterPassword">Enter the password</string>
+    <string name="text_mobile">Alarm no.:</string>
+    <string name="text_password">Password:</string>
+    <string name="text_connect">Activate alarm</string>
+</resources>

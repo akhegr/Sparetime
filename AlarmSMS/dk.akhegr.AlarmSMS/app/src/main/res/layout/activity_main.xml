@@ -1,0 +1,144 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:layout_width="91dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/house"
+            android:id="@+id/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:id="@+id/textView2"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold"
+            android:textSize="50dp" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TableLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="@string/text_mobile"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:gravity="fill_vertical"
+                    android:layout_column="0" />
+
+                <EditText
+                    android:id="@+id/mobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mobile"
+                    android:hint="@string/text_enterMobile"
+                    android:inputType="phone"
+                    android:layout_column="1">
+                </EditText>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/text_password"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:gravity="fill_vertical"
+                    android:layout_column="0" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/text_enterPassword"
+                    android:inputType="numberPassword"
+                    android:layout_column="1">
+
+                </EditText>
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/connect"
+            android:id="@+id/connect"
+            android:background="@null"
+            android:clickable="true" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/status"
+            android:id="@+id/status"
+            android:background="@null"
+            android:clickable="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/disconnect"
+            android:id="@+id/disconnect"
+            android:background="@null"
+            android:clickable="true" />
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/text_byLine"
+        android:id="@+id/byLine"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal" />
+
+</LinearLayout>

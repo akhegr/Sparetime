@@ -1,0 +1,4 @@
+#Mon Feb 04 15:08:17 CET 2019
+base.0=C\:\\Users\\akheg\\OneDrive - University College Nordjylland\\StudioProjects\\Egne\\dk.akhegr.AlarmSMS\\dk.akhegr.AlarmSMS\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex
