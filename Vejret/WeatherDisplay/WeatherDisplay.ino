@@ -1,3 +1,15 @@
+#include <ETH.h>
+#include <WiFi.h>
+#include <WiFiAP.h>
+#include <WiFiClient.h>
+#include <WiFiGeneric.h>
+#include <WiFiMulti.h>
+#include <WiFiScan.h>
+#include <WiFiServer.h>
+#include <WiFiSTA.h>
+#include <WiFiType.h>
+#include <WiFiUdp.h>
+
 // ESP32 with GxEPD and data from WiFi
 // Created by Aksel Heidemann Gregersen
 
@@ -41,10 +53,18 @@ GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16
 #include <SPI.h>
 #include <WiFi.h>
 
-const char* ssid     = "TN-LX2040";
-const char* password = "8ombackHivra";
-const char* host = "api.akselhg.dk";
+#define uS_TO_S_FACTOR 1000000  /* Conversion factor for microseconds to seconds */
+#define mS_TO_S_FACTOR 100000  /* Conversion factor for milliseconds to seconds */
+#define TIME_TO_SLEEP  900        /* Time ESP32 will go to sleep (in seconds) */
+
+const char* ssid     = "yourWifi";
+const char* password = "yourPassword";
+const char* host = "yourWebsite.com";
 const char* lastResult = "";
+const char* result = "";
+RTC_DATA_ATTR char lastId[25];
+RTC_DATA_ATTR int bootCount = 0;
+bool loadState = false;
 
 WiFiClient client;
 /***  End WiFi  Includes     ***/
@@ -52,55 +72,196 @@ WiFiClient client;
 void setup()
 {
   Serial.begin(115200);
-  Serial.println();
-  Serial.println("setup");
-
   display.init(115200); // enable diagnostic output on Serial
+  Serial.println("setup");
+  
+  //Increment boot number and print it on reboot
+  ++bootCount;
+  Serial.println("Boot number: " + String(bootCount));
 
-  Serial.println("setup done");
+  //Print the wakeup reason for ESP32
+  print_wakeup_reason();
 
-  display.fillScreen(GxEPD_WHITE);
-  
-  showFont("Vejrstation", &FreeMonoBold24pt7b, 50, 50);
-  showFont("Aksel H. Gregersen", &FreeMonoBold9pt7b, 110, 110);
-  display.drawBitmap(gImage_WEATHER, 20, 80, 50, 50, GxEPD_WHITE); 
-  display.drawBitmap(gImage_WEATHER, 330, 80, 50, 50, GxEPD_WHITE); 
-  
-  showFont("Tidspunkt:",      &FreeMonoBold12pt7b, 15, 170);
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 170);
-  
-  showFont("Nedboer:",        &FreeMonoBold12pt7b, 15, 200);
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 200);
-  
-  showFont("Vindretning:",    &FreeMonoBold12pt7b, 15, 230);
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 230);
-  
-  showFont("Vindhastighed:",  &FreeMonoBold12pt7b, 15, 260);
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 260);
-  
-  showFont("Tryk:",           &FreeMonoBold12pt7b, 15, 290);
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 290);
-  
-  display.update();
+  //Configure the wake up source
+  esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * mS_TO_S_FACTOR);
+  Serial.println("ESP32 sleeps for " + String(TIME_TO_SLEEP) + " seconds");
 
-  WiFi.disconnect(true);
-  WiFi.begin(ssid, password);
+  //Get WiFi connection
+  initWiFi();  
 
-  Serial.print("Loading ");
-  while (WiFi.status() != WL_CONNECTED)
+  //Get and parse data
+  getData();
+  parseData();
+}
+
+void sleep(bool error)
+{
+  if(error)
   {
-      delay(500);
+    initHeader();
+    memset(lastId, 0, sizeof(lastId));
+    display.update();
+  }
+  
+  Serial.println("Sleeping");
+  delay(5000);
+  Serial.flush(); 
+  esp_deep_sleep_start();
+}
+
+void loop() { }
+
+/*
+  Method to print the reason by which ESP32
+  has been awaken from sleep
+*/
+void print_wakeup_reason(){
+  esp_sleep_wakeup_cause_t wakeup_reason;
+
+  wakeup_reason = esp_sleep_get_wakeup_cause();
+
+  switch(wakeup_reason)
+  {
+    case ESP_SLEEP_WAKEUP_EXT0:
+      Serial.println("Wakeup caused by external signal using RTC_IO");
+      break;
+    case ESP_SLEEP_WAKEUP_EXT1:
+      Serial.println("Wakeup caused by external signal using RTC_CNTL");
+      break;
+    case ESP_SLEEP_WAKEUP_TIMER:
+      Serial.println("Wakeup caused by timer");
+      break;
+    case ESP_SLEEP_WAKEUP_TOUCHPAD:
+      Serial.println("Wakeup caused by touchpad");
+      break;
+    case ESP_SLEEP_WAKEUP_ULP:
+      Serial.println("Wakeup caused by ULP program");
+      break;
+    default:
+      Serial.printf("Wakeup was not caused by deep sleep: %d\n", wakeup_reason);
+      break;
+  }
+}
+
+/*
+ * Set WiFi ready to use
+ */
+void WiFiStationConnected(WiFiEvent_t event, WiFiEventInfo_t info)
+{
+  loadState = true;
+  Serial.println("Connected to AP successfully!");
+}
+
+/*
+ * Set WiFi ready to use, and tell its IP-address
+ */
+void WiFiGotIP(WiFiEvent_t event, WiFiEventInfo_t info)
+{
+  loadState = true;
+  Serial.println("WiFi connected");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+/*
+ * Set WiFi not ready to use
+ */
+void WiFiStationDisconnected(WiFiEvent_t event, WiFiEventInfo_t info)
+{
+  loadState = false;
+  Serial.println("Disconnected from WiFi access point");
+  Serial.print("WiFi lost connection. Reason: ");
+  Serial.println(info.disconnected.reason);
+  Serial.println("Trying to Reconnect");
+  WiFi.begin(ssid, password);
+}
+
+/*
+ * Prepare WiFi before usage
+ */
+void initWiFi()
+{
+  // delete old config
+  WiFi.disconnect(true);
+
+  delay(1000);
+
+  WiFi.onEvent(WiFiStationConnected, SYSTEM_EVENT_STA_CONNECTED);
+  WiFi.onEvent(WiFiGotIP, SYSTEM_EVENT_STA_GOT_IP);
+  WiFi.onEvent(WiFiStationDisconnected, SYSTEM_EVENT_STA_DISCONNECTED);
+  
+  WiFi.persistent(false);
+  WiFi.mode(WIFI_OFF);
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi ..");
+
+  unsigned long wifiConnectStart = millis();
+
+  while (WiFi.status() != WL_CONNECTED) {
+    // Check to see if
+    int timespan = millis() - wifiConnectStart;
+    if(loadState)
+    {
+      if(WiFi.status() == WL_CONNECTED)
+      {
+        break;
+      }
+    }
+    else if (WiFi.status() == WL_CONNECT_FAILED)
+    {
+      Serial.println("Failed to connect to WiFi.");
+      break;
+    }
+    else if (timespan > 60000)
+    {
+      Serial.println("Failed to connect to WiFi");
+      break;
+    }
+    else if(WiFi.status() != WL_CONNECTED 
+            && timespan % 15000 == 0)
+    {
       Serial.print(".");
+    }
+  }
+
+  if(!loadState)
+  {
+    sleep(true);
+  }
+  else
+  {
+    Serial.println("Continue loading :)");
   }
   Serial.println();
 }
 
-void loop()
+/*
+ * Initialize header on display
+ */
+void initHeader()
 {
-  getData();
-  Watchdog.sleep(600000);
+  display.fillScreen(GxEPD_WHITE);
+  showFont("Vejrstation", &FreeMonoBold24pt7b, 50, 50);
+  showFont("Aksel H. Gregersen", &FreeMonoBold9pt7b, 110, 110);
+  display.drawBitmap(gImage_WEATHER, 20, 80, 50, 50, GxEPD_WHITE); //left side
+  display.drawBitmap(gImage_WEATHER, 330, 80, 50, 50, GxEPD_WHITE); //right side
+}
+/*
+ * Initialize main data on display
+ */
+void initScreen()
+{
+  showFont("Tidspunkt:",     &FreeMonoBold12pt7b, 15, 170);
+  showFont("Nedboer:",       &FreeMonoBold12pt7b, 15, 200);
+  showFont("Vindretning:",   &FreeMonoBold12pt7b, 15, 230);
+  showFont("Vindhastighed:", &FreeMonoBold12pt7b, 15, 260);
+  showFont("Tryk:",          &FreeMonoBold12pt7b, 15, 290);
 }
 
+/*
+ * Show incomming data on screen
+ */
 void showFont(const char text[], const GFXfont* font, int x, int y)
 {
   display.setCursor(x, y);
@@ -109,17 +270,20 @@ void showFont(const char text[], const GFXfont* font, int x, int y)
   display.println(text);
 }
 
+/*
+ * Read data on API
+ */
 void getData()
 {
     const int httpPort = 80;
     if (!client.connect(host, httpPort))
     {
         Serial.println("connection failed");
-        return;
+        sleep(true);
     }
 
     // We now create a URI for the request
-    String url = "/weather/readOneWeather.php";
+    String url = "/api/getWeather.php";
 
     // This will send the request to the server
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
@@ -133,12 +297,12 @@ void getData()
         {
             Serial.println(">>> Client Timeout !");
             client.stop();
-            return;
+            sleep(true);
         }
     }
 
     // Read all the lines of the reply from server and print them to Serial
-    const char* result = "";
+    const char* localResult = "";
     bool startRead = false;
     while(client.available())
     {
@@ -154,100 +318,156 @@ void getData()
         char buf[200];
         char* lineBuffer = string2char(line);
 
-        strcpy(buf, result);
+        strcpy(buf, localResult);
         strcat(buf, lineBuffer);
-        result = buf; 
+        localResult = buf; 
       }
+      result = localResult;
     }
-
-    if(result != lastResult)
-    {
-      lastResult = result;
-      parseData();
-    }
-	
-	client.stop();
 }
 
+/*
+ * Parse JSON object from API, and manage it
+ */
 void parseData()
-{
-  char result[200];
-  strcpy(result, lastResult);
+{ 
+  char localResult[200];
+  bool state = false;
+  strcpy(localResult, result);
   
   const size_t capacity = JSON_OBJECT_SIZE(3) + JSON_ARRAY_SIZE(2) + 60;
   DynamicJsonDocument doc(capacity);
 
   // Parse JSON object
-  DeserializationError error = deserializeJson(doc, result);
+  DeserializationError error = deserializeJson(doc, localResult);
   if (error)
   {
     Serial.print(F("deserializeJson() failed: "));
     Serial.println(error.f_str());
-    client.stop();
-    return;
+    state = true;
   }
+  else
+  {
+    // Extract values
+    const char* id = doc["id"].as<const char*>();
 
-  // Extract values
-  const char* unitMillimeter =          "mm";
-  const char* unitMeterPerSecond =      "m/s";
-  const char* unitPascal =              "Pa";
+    char localTime[25];
+    strcpy(localTime, id);
+    
+    if(strcmp(localTime, lastId) != 0)
+    {
+      const char* datetime = doc["datetime"].as<const char*>();
+      const char* rainAmount = doc["rainAmount"].as<const char*>();
+      const char* windDir = doc["windDir"].as<const char*>();
+      const char* windSpeed = doc["windSpeed"].as<const char*>();
+      const char* pressure = doc["pressure"].as<const char*>();
+      printData(datetime, rainAmount, windDir, windSpeed, pressure);
+      Serial.println("Updated screen");
+      strcpy(lastId, localTime);
+    }
+    else
+    {
+      Serial.println("Screen shows the current data already");
+    }
+  }
   
-  const char* datetime =                doc["datetime"].as<const char*>();
-  const char* rainAmount =              doc["rainAmount"].as<const char*>();
-  const char* windDir =                 doc["windDir"].as<const char*>();
-  const char* windSpeed =               doc["windSpeed"].as<const char*>();
-  const char* pressure =                doc["pressure"].as<const char*>();
-  const char* clockTime =               lastLetters(datetime, 8);
-  
-  String rainString =                   getDataWithUnit(rainAmount, unitMillimeter);
-  String windString =                   getDataWithUnit(windSpeed, unitMeterPerSecond);
-  String pressureString =               getDataWithUnit(pressure, unitPascal);
+  client.stop();
+  sleep(state);
+}
 
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 170);
-  showFont(clockTime,         &FreeMonoBold12pt7b, 250, 170);
+/*
+ * Print incomming data
+ */
+void printData(const char* datetime, const char* rainAmount, const char* windDir, 
+               const char* windSpeed, const char* pressure)
+{
+  initHeader();
+  initScreen();
+  const char* unitMillimeter = "mm";
+  const char* unitMeterPerSecond = "m/s";
+  const char* unitPascal = "Pa";
   
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 200);
-  showFont(string2char(rainString),     &FreeMonoBold12pt7b, 250, 200);
+  const char* clockTime = lastLetters(datetime, 8);
+  String rainString = getDataWithUnit(rainAmount, unitMillimeter);
+  String windString = getDataWithUnit(windSpeed, unitMeterPerSecond);
+  String pressureString = getDataWithUnit(pressure, unitPascal);
   
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 230);
-  showFont(getDirection(windDir),       &FreeMonoBold12pt7b, 250, 230);
-  
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 260);
-  showFont(string2char(windString),     &FreeMonoBold12pt7b, 250, 260);
-  
-  showFont("          ",      &FreeMonoBold12pt7b, 250, 290);
+  showFont(clockTime, &FreeMonoBold12pt7b, 250, 170);
+  showFont(string2char(rainString), &FreeMonoBold12pt7b, 250, 200);
+  showFont(getDirection(windDir), &FreeMonoBold12pt7b, 250, 230);
+  showFont(string2char(windString), &FreeMonoBold12pt7b, 250, 260);
   showFont(string2char(pressureString), &FreeMonoBold12pt7b, 250, 290);
+  
   display.update();
 }
 
+/*
+ * Convert String to char*
+ */
 char* string2char(String command)
 {
-    if(command.length()!=0)
-    {
-        char* p = const_cast<char*>(command.c_str());
-        return p;
-    }
+  if(command.length()!=0)
+  {
+      char* p = const_cast<char*>(command.c_str());
+      return p;
+  }
 }
 
+/*
+ * Return the x last character in the incomming char*
+ */
 const char* lastLetters(const char* str, int amount)
 {
   int len = strlen(str);
   return len > 0 ? str + len - amount : str;
 }
 
+/*
+ * Convert incomming direction to its word
+ */
 const char* getDirection(const char* str)
 {
-  if(strcmp(str, "N") == 0) return "Nord";
-  else if(strcmp(str, "NE") == 0) return "Nordoest";
-  else if(strcmp(str, "E") == 0) return "Oest";
-  else if(strcmp(str, "SE") == 0) return "Sydoest";
-  else if(strcmp(str, "S") == 0) return "Syd";
-  else if(strcmp(str, "SW") == 0) return "Sydvest";
-  else if(strcmp(str, "W") == 0) return "Vest";
-  else if(strcmp(str, "NW") == 0) return "Nordvest";
-  return "?";
+  if(strcmp(str, "N") == 0)
+  {
+    return "Nord";
+  }
+  else if(strcmp(str, "NE") == 0)
+  {
+    return "Nordoest";
+  }
+  else if(strcmp(str, "E") == 0)
+  {
+    return "Oest";
+  }
+  else if(strcmp(str, "SE") == 0)
+  {
+    return "Sydoest";
+  }
+  else if(strcmp(str, "S") == 0)
+  {
+    return "Syd";
+  }
+  else if(strcmp(str, "SW") == 0)
+  {
+    return "Sydvest";
+  }
+  else if(strcmp(str, "W") == 0)
+  {
+    return "Vest";
+  }
+  else if(strcmp(str, "NW") == 0)
+  {
+    return "Nordvest";
+  }
+  else
+  {
+    return "?"; 
+  }
 }
 
+/*
+ * Return the inputText followed by the inputUnit
+ */
 String getDataWithUnit(const char* inputText, const char* inputUnit)
 {
   String value = "";
