@@ -41,9 +41,9 @@ GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16
 #include <SPI.h>
 #include <WiFi.h>
 
-const char* ssid     = "yourWifi";
-const char* password = "yourPassword";
-const char* host = "yourWebsite.com";
+const char* ssid     = "TN-LX2040";
+const char* password = "8ombackHivra";
+const char* host = "api.akselhg.dk";
 const char* lastResult = "";
 
 WiFiClient client;
@@ -119,7 +119,7 @@ void getData()
     }
 
     // We now create a URI for the request
-    String url = "/api/getWeather.php";
+    String url = "/weather/readOneWeather.php";
 
     // This will send the request to the server
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
