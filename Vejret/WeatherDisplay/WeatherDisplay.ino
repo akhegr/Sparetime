@@ -53,7 +53,6 @@ GxEPD_Class display(io, /*RST=*/ 16, /*BUSY=*/ 4); // arbitrary selection of (16
 #include <SPI.h>
 #include <WiFi.h>
 
-#define uS_TO_S_FACTOR 1000000  /* Conversion factor for microseconds to seconds */
 #define mS_TO_S_FACTOR 100000  /* Conversion factor for milliseconds to seconds */
 #define TIME_TO_SLEEP  900        /* Time ESP32 will go to sleep (in seconds) */
 
