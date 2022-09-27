@@ -93,13 +93,18 @@ void setup()
   parseData();
 }
 
-void sleep(bool error)
+void sleep(char* message)
 {
-  if(error)
+  if(strlen(message) > 0)
   {
     initHeader();
+    showFont(message, &FreeMonoBold12pt7b, 15, 200);
     memset(lastId, 0, sizeof(lastId));
     display.update();
+    Serial.print("Error: ");
+    Serial.print(strlen(message));
+    Serial.print(" - ");
+    Serial.println(message);
   }
   
   Serial.println("Sleeping");
@@ -226,7 +231,7 @@ void initWiFi()
 
   if(!loadState)
   {
-    sleep(true);
+    sleep("Kunne ikke tilgaa WiFi :(");
   }
   else
   {
@@ -277,8 +282,8 @@ void getData()
     const int httpPort = 80;
     if (!client.connect(host, httpPort))
     {
-        Serial.println("connection failed");
-        sleep(true);
+        Serial.println("Connection failed");
+        sleep("Kunne ikke tilgaa internettet :(");
     }
 
     // We now create a URI for the request
@@ -296,7 +301,7 @@ void getData()
         {
             Serial.println(">>> Client Timeout !");
             client.stop();
-            sleep(true);
+            sleep("Kunne ikke tilgaa serveren :(");
         }
     }
 
@@ -330,6 +335,7 @@ void getData()
  */
 void parseData()
 { 
+  char* message = "";
   char localResult[200];
   bool state = false;
   strcpy(localResult, result);
@@ -343,17 +349,17 @@ void parseData()
   {
     Serial.print(F("deserializeJson() failed: "));
     Serial.println(error.f_str());
-    state = true;
+    message = "Problem med haandtering af data :(";
   }
   else
   {
     // Extract values
     const char* id = doc["id"].as<const char*>();
 
-    char localTime[25];
-    strcpy(localTime, id);
+    char tempId[25];
+    strcpy(tempId, id);
     
-    if(strcmp(localTime, lastId) != 0)
+    if(strcmp(tempId, lastId) != 0)
     {
       const char* datetime = doc["datetime"].as<const char*>();
       const char* rainAmount = doc["rainAmount"].as<const char*>();
@@ -361,8 +367,8 @@ void parseData()
       const char* windSpeed = doc["windSpeed"].as<const char*>();
       const char* pressure = doc["pressure"].as<const char*>();
       printData(datetime, rainAmount, windDir, windSpeed, pressure);
-      Serial.println("Updated screen");
-      strcpy(lastId, localTime);
+      Serial.println("Data on screen is updated");
+      strcpy(lastId, tempId);
     }
     else
     {
@@ -371,7 +377,7 @@ void parseData()
   }
   
   client.stop();
-  sleep(state);
+  sleep(message);
 }
 
 /*
