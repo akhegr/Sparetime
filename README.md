@@ -13,7 +13,7 @@ Furthermore, I have extended the project by making a project in Google AppInvent
 In this project, I am using two Arduinos and an Google AppInventor 2 to control a LEGO technic robot without prebuild controller.
 
 ## Weather
-In this project, I am using an Anduino Uno Wifi to receive data from a Digital pressure sensor (BMP180), which can read temperature, pressure og height. Furthermore, the Arduino reads data from a [SparkFun - Weather Meters](https://www.sparkfun.com/products/8942), which can read rain amount, wind direction and wainspeed.
+In this project, I am using an Anduino Uno Wifi to receive data from a Digital pressure sensor (BMP180), which can read temperature, pressure og humidity.  Furthermore, the Arduino reads data from a [SparkFun - Weather Meters](https://www.sparkfun.com/products/8942), which can read rain amount, wind direction and wainspeed.
 
 ## Further description?
 For more information about my projects: http://akselhg.dk/projects/
