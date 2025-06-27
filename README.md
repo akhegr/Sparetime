@@ -37,12 +37,16 @@ Furthermore, I have extended the project by making a project in Google AppInvent
 * Arduino
 * Google AppInventor 2
 
+---
+
 ### 3. 🌡️ Weather meter
 **Description**: In this project, I am using an Anduino Uno Wifi to receive data from a Digital pressure sensor (BMP180), which can read temperature, pressure og humidity.  Furthermore, the Arduino reads data from a [SparkFun - Weather Meters](https://www.sparkfun.com/products/8942), which can read rain amount, wind direction and wainspeed.
 
 **Technologies**:  
 * Arduino
 * webserver
+
+---
 
 ## Further description?
 For more information about my projects, have a look on my [website](http://akselhg.dk/projects/)
